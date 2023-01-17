@@ -66,6 +66,7 @@
 .typewriter-text-preloader {
   display: inline-block;
   overflow: hidden;
+  overflow-wrap: normal;
   letter-spacing: 2px;
   animation: typing 1.25s steps(25, end), blink 0.75s step-end infinite;
   white-space: nowrap;
