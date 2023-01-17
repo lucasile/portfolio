@@ -69,7 +69,6 @@
   letter-spacing: 2px;
   animation: typing 1.25s steps(25, end), blink 0.75s step-end infinite;
   white-space: nowrap;
-  font-size: 30px;
   font-weight: 375;
   border-right: 4px solid white;
   box-sizing: border-box;
