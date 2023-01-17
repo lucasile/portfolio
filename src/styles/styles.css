@@ -1,0 +1,100 @@
+* {
+  font-family: Courier, monospace;
+}
+
+#transition-pane {
+  width: 75%;
+  height: 75%;
+  transition-property: width, height, transform;
+  transition-duration: 0.6s, 0.6s, 0.4s;
+  transition-delay: 0s, 0s, 0.7s;
+  transition-timing-function: cubic-bezier(0.55, 0.04, 0.27, 0.91);
+}
+
+#transition-pane.start-transition {
+  width: 100%;
+  height: 100%;
+  transform: translateY(-100%);
+}
+
+.typewriter {
+  display: inline-block;
+  font-family: Courier, monospace;
+}
+
+.custom-shape-divider-top-1673926392 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1673926392 svg {
+  position: relative;
+  display: block;
+  width: calc(160% + 1.3px);
+  height: 170px;
+}
+
+.custom-shape-divider-top-1673926392 .shape-fill {
+  fill: #059669;
+}
+
+.custom-shape-divider-bottom-1673926319 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1673926319 svg {
+  position: relative;
+  display: block;
+  width: calc(160% + 1.3px);
+  height: 170px;
+}
+
+.custom-shape-divider-bottom-1673926319 .shape-fill {
+  fill: #059669;
+}
+
+.typewriter-text-preloader {
+  display: inline-block;
+  overflow: hidden;
+  letter-spacing: 2px;
+  animation: typing 1.25s steps(25, end), blink 0.75s step-end infinite;
+  white-space: nowrap;
+  font-size: 30px;
+  font-weight: 375;
+  border-right: 4px solid white;
+  box-sizing: border-box;
+}
+
+.blinking {
+  animation: blink 0.75s step-end infinite;
+  border-right: 4px solid white;
+}
+
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
