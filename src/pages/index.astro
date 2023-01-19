@@ -26,23 +26,23 @@ import "../styles/styles.css"
         </svg>
       </div>
        
-      <PreLoader></PreLoader>
+      <PreLoader />
 
-    	<div id="front-content" class="text-center w-1/2 h-1/5 grid grid-cols-1 grid-rows-2 place-items-center content-center">
+    	<div id="front-content" class="text-center w-1/2 h-1/4 md:h-1/5 grid grid-cols-1 grid-rows-3 place-items-center content-center">
         
         <h1 class="text-2xl md:text-5xl text-white">Hi. I'm Lucas</h1>
 
-        <Shell></Shell>
+        <Shell /> 
  
-        <button id="project-button" onclick="">My Projects</button>
+        <button id="project-button" class="shadow-2xl font-semibold" onclick="">My Projects</button>
 
 	    </div>
 
-      <div id="projects-content" class="text-center w-1/2 h-1/5 grid grid-cols-1 grid-rows-2 place-items-center content-center">
+      <div id="projects-content" class="text-center">
         
-        <ProjectPage>
-          
-        </ProjectPage>
+        <ProjectPage />
+
+        <button id="back-button" class="shadow-2xl font-semibold" onclick="">Back</button>
 
       </div>
 
@@ -73,11 +73,11 @@ import "../styles/styles.css"
 
     }, 2200);
 
-    const button = document.getElementById("project-button");
+    const projectButton = document.getElementById("project-button");
 
-    if (button != null) {
+    if (projectButton != null) {
 
-      button.addEventListener('click', () => {
+      projectButton.addEventListener('click', () => {
 
         for (let i = 0; i < squiggles.length; i++) {
           squiggles[i].classList.add("projects-page");
@@ -87,7 +87,36 @@ import "../styles/styles.css"
         
         frontContent.classList.add("hide");
 
+        if (frontContent.classList.contains("show"))
+          frontContent.classList.remove("show");
+
         projectsContent.classList.add("show");
+
+        if (projectsContent.classList.contains("hide"))
+          projectsContent.classList.remove("hide");
+
+      });
+
+    }
+
+    const backButton = document.getElementById("back-button");
+
+    if (backButton != null) {
+
+      backButton.addEventListener('click', () => {
+  
+        for (let i = 0; i < squiggles.length; i++) {
+          squiggles[i].classList.remove("projects-page");
+        }
+
+        background.classList.remove("background-projects");
+        
+        frontContent.classList.remove("hide");
+        frontContent.classList.add("show");
+
+        projectsContent.classList.add("hide");
+        projectsContent.classList.remove("show");
+
 
       });
 

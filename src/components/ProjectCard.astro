@@ -2,6 +2,30 @@
 const { frontmatter, Content } = Astro.props;
 ---
 
-<p>{frontmatter.title}</p>
-<Content />
+<div data-message={frontmatter.url} class="card shadow-2xl place-self-stretch">
+  <h1 class="font-bold text-white">{frontmatter.title}</h1>
+  <Content />
+</div>
+
+<script>
+  
+  const cards = document.querySelectorAll(".card");
+
+  for (let i = 0; i < cards.length; i++) {
+
+    const card = cards[i]!;
+
+    card.addEventListener("click", () => {
+
+      // card.classList.add("clicked");
+
+      if (card.dataset.message != null) {
+        window.open(card.dataset.message);
+      }
+
+    });
+
+  }
+
+</script>
 
