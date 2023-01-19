@@ -1,0 +1,12 @@
+---
+import ProjectCard from './ProjectCard.astro';
+const projects = await Astro.glob('../projects/*.md')
+---
+
+<div class="projects-grid grid grid-cols-3 text-center place-items-center content-center">
+ 
+  {projects.map(project => 
+    <ProjectCard frontmatter={project.frontmatter} Content={project.Content}/>
+  )}
+</ul>
+
